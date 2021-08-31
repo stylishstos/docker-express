@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs', { currentPage: 'posts'}) %>
+    </header>
+    <main>
+        <section class="posts">
+            <a href="/posts/add" class="add">+++ add new post +++</a>
+            <div class="clear"></div>
+            <% if (posts.length) { %>
+                <% posts.forEach(({ id, title, date, text, author }) => { %>
+                    <article>
+                        <h2 class="title"><a href="/posts/<%= id %> "><%= title  %></a></h2>
+                        <p class="info">
+                            <span class="date"><%= date %></span>
+                            <span class="author"><%= author %></span>
+                        </p>
+                        <p class="text"><%= text %> </p>
+                    </article>
+                <% }); %> 
+            <% } else {%>
+                <h1 class="title">There are no results</h1>
+            <% } %>  
+        </section>
+    </main>
+</body>
+</html>

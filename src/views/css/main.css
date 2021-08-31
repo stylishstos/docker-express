@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'VT323', monospace;
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+
+main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+nav ul {
+    max-width: 920px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 0 10px;
+    min-width: 150px;
+    border-bottom: 5px solid #000;
+
+    font-size: 32px;
+    text-align: center;
+    text-decoration: none;
+    color: lime;
+    text-transform: uppercase;
+}
+
+nav ul li a.active {
+    border-bottom: 5px solid lime;
+}
+
+/* ---- posts ------- */
+
+.posts .title a, .post .title {
+    display: inline-block;
+    margin: 15px 0 32px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #fff;
+}
+
+.posts .info, .post .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    color: grey;
+}
+
+.posts article {
+    margin-bottom: 35px;
+}
+
+.posts article::after {
+    content: '';
+    display: block;
+    width: 100px;
+    margin: 25px auto 0;
+    border-bottom: 5px dotted purple;
+}
+
+.posts .add, .posts .add:visited {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid blue;
+    margin: 15px 0;
+    float: right;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: blue;
+}
+
+.posts .text, .post .text {
+    text-align: justify;
+}
+
+/* ---- posts end ------- */
+
+/* ---- post ------- */
+.post .back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: blue;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+
+/* ---- post end ------- */
+
+/* ---- add-post ------- */
+.add-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-post form {
+    max-width: 600px;
+    padding: 30px 0;
+}
+
+.add-post label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.add-post input, .add-post textarea,
+.add-post input:focus, .add-post textarea:focus {
+    border: none;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+    margin-left: 15px;
+    width: 400px;
+    resize: none;
+    background: #000;
+    outline: none;
+    color: #fff;
+    font-size: 22px;
+    overflow: hidden;
+}
+
+.add-post textarea, .add-post textarea:focus {
+    overflow-y: scroll;
+}
+
+.add-post input:focus,
+.add-post textarea:focus {
+    border-bottom: 2px solid orange;
+}
+
+.add-post input:focus + .label,
+.add-post textarea:focus + .label {
+    color: orange;
+}
+
+.add-post button {
+    margin-top: 30px;
+    padding: 15px;
+    width: 100%;
+    background: #fff;
+    border: none;
+    font-size: 24px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/* ---- add-post end ------- */
+
+/* ---- error ----- */
+.error .title {
+    display: inline-block;
+    margin: 15px 0 32px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    padding-bottom: 5px;
+    border-bottom: 5px solid #fff;
+}
+/* ---- error end ---- */
+

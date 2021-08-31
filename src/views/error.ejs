@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs', { currentPage: 'index'}) %>
+    </header>
+    <main class="error">
+        <h1 class="title">Something is going wrong</h1>
+        <p>
+            <%= error || '' %> 
+        </p>
+    </main>
+</body>
+</html>

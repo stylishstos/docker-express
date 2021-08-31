@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <header>
+        <%- include('./partials/nav.ejs', { currentPage: 'posts'}) %>
+    </header>
+    <main>
+        <section class="add-post">
+            <form method="POST" action="/posts/add">
+                <label>
+                    <input type="text" name="title" />
+                    <span class="label">title</span>
+                </label>
+                <label>
+                    <input type="text" name="author" />
+                    <span class="label">author</span>
+                </label>
+                <label>
+                    <textarea rows="10" name="text"></textarea>
+                    <span class="label">text</span>
+                </label>
+                <button>Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
