@@ -10,11 +10,16 @@
             <a href="/posts/add" class="add">+++ add new post +++</a>
             <div class="clear"></div>
             <% if (posts.length) { %>
-                <% posts.forEach(({ id, title, date, text, author }) => { %>
+                <% posts.forEach(({ id, title, createdAt, text, author }) => { %>
                     <article>
-                        <h2 class="title"><a href="/posts/<%= id %> "><%= title  %></a></h2>
+                        <header class="header">
+                            <h2 class="title"><a href="/posts/<%= id %> "><%= title  %></a></h2>
+                            <button class="btn-delete" data-id="<%= id %>">
+                                <i class="fas fa-trash-alt" data-id="<%= id %>"></i>
+                            </button>
+                        </header>
                         <p class="info">
-                            <span class="date"><%= date %></span>
+                            <span class="date"><%= createdAt.toLocaleDateString() %></span>
                             <span class="author"><%= author %></span>
                         </p>
                         <p class="text"><%= text %> </p>
@@ -25,5 +30,16 @@
             <% } %>  
         </section>
     </main>
+    <script>
+        document.querySelectorAll(".btn-delete").forEach(function(btn) {
+            btn.addEventListener("click", function(e) {
+                fetch(`/posts/${e.target.dataset.id}`, {
+                    method: 'DELETE',
+                }).then(() => {
+                    window.location.reload();
+                });
+            })
+        });
+    </script>
 </body>
 </html>

@@ -50,6 +50,29 @@ nav ul li a.active {
     border-bottom: 5px solid lime;
 }
 
+/* ---- post, posts header ---- */
+.post .header,
+.posts .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-edit,
+.btn-delete {
+    text-transform: uppercase;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    width: 48px;
+    border-radius: 3px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+/* ---- post, posts header end---- */
+
 /* ---- posts ------- */
 
 .posts .title a, .post .title {

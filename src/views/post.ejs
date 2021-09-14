@@ -7,16 +7,35 @@
     </header>
     <main>
         <section class="post">
-            <a class="back-link" href="/posts"> &lt;&lt; back </a>
+            <div class="header">
+                <a class="back-link" href="/posts"> &lt;&lt; back </a>
+                <span>
+                    <a href="/edit/<%= post.id %>" class="btn-edit"><i class="fas fa-edit"></i></a>
+                    <button class="btn-delete" data-id="<%= post.id %>">
+                        <i class="fas fa-trash-alt" data-id="<%= post.id %>"></i>
+                    </button>
+                </span>
+            </div>
             <article>
                 <h2 class="title"><%= post.title  %></h2>
                 <p class="info">
-                    <span class="date"><%= post.date %></span>
+                    <span class="date"><%= post.createdAt.toLocaleDateString() %></span>
                     <span class="author"><%= post.author %></span>
                 </p>
                 <p class="text"><%= post.text %> </p>
             </article>
         </section>
     </main>
+    <script>
+        document.querySelectorAll(".btn-delete").forEach(function(btn) {
+            btn.addEventListener("click", function(e) {
+                fetch(`/posts/${e.target.dataset.id}`, {
+                    method: 'DELETE',
+                }).then(() => {
+                    window.location.href = '/posts';
+                });
+            })
+        });
+    </script>
 </body>
 </html>
